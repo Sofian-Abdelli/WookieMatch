@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
-
+import "./index.css";
 import App from "./App";
 
 // page components
@@ -31,7 +31,5 @@ const router = createBrowserRouter([
 const rootElement = document.getElementById("root");
 
 if (rootElement != null) {
-  ReactDOM.createRoot(rootElement).render(
-    <RouterProvider router={router} />
-  );
+  ReactDOM.createRoot(rootElement).render(<RouterProvider router={router} />);
 }
