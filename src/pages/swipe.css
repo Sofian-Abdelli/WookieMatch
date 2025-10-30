@@ -7,16 +7,6 @@
   align-items: center;
   height: 100vh;
 }
-.swipe-card-container {
-  grid-area: stack;
-  width: 600px;
-  height: 700px;
-  background: black;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .swipe-card {
   grid-area: stack;
   height: 500px;
@@ -50,4 +40,7 @@
     corner-shape: bevel;
     border-bottom-right-radius: 20px;
   }
+}
+.loved {
+  background-color: white;
 }
