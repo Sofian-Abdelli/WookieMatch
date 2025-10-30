@@ -10,10 +10,10 @@
 		"check:fix": "biome check --write src",
 		"preview": "vite preview"
 	},
-
 	"dependencies": {
 		"react": "^19.1.1",
-		"react-dom": "^19.1.1"
+		"react-dom": "^19.1.1",
+		"react-router": "^7.9.5"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.3.2",
