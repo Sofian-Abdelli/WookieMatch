@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import "./swipe.css";
+import Background from "../components/Background";
 
-function Swipe() {
-  const [characs, setCharacs] = useState(null);
+function Swipe(props) {
+  const { filter } = props;
+
+  const [characs, setCharacs] = useState<any>(null);
   const [index, setIndex] = useState(0);
-  const [isLoved, setIsLoved] = useState(false);
   const [smth, setSmth] = useState(0);
+  const [loveArr, setLoveArr] = useState([]);
 
   useEffect(() => {
     fetch("https://miadil.github.io/starwars-api/api/all.json")
       .then((response) => response.json())
       .then((data) =>
-        setCharacs(data.filter((char) => char.homeworld === "tatooine")),
+        setCharacs(data.filter((char) => char.homeworld === filter)),
       );
   }, []);
 
@@ -23,35 +26,38 @@ function Swipe() {
 
   const noNext = () => {
     setSmth((prev) => prev + 1);
-    setIsLoved(false);
   };
 
   const yesNext = () => {
+    setLoveArr((prev) => [...prev, characs[index].name]);
     setSmth((prev) => prev + 1);
-    setIsLoved(true);
   };
 
   return (
-    <div className="swipe-main">
-      {characs ? (
-        <>
-          <div key={characs[index].id} className="swipe-card">
-            <img src={characs[index].image} alt={characs[index].name}></img>
-            <article>
-              <span>{characs[index].name}</span>
-            </article>
-          </div>
-          <button onClick={yesNext}>love</button>
-          <button onClick={noNext}>X</button>
+    <>
+      <Background />
+      <div className="swipe-main">
+        {characs ? (
+          <>
+            <div key={characs[index].id} className="swipe-card">
+              <img src={characs[index].image} alt={characs[index].name}></img>
+              <article>
+                <span>{characs[index].name}</span>
+              </article>
+            </div>
 
-          <div className="loved">
-            {isLoved ? `I like ${characs[index].name}` : ""}
-          </div>
-        </>
-      ) : (
-        <p>Loading ....</p>
-      )}
-    </div>
+            <button onClick={yesNext}>love</button>
+            <button onClick={noNext}>X</button>
+
+            {loveArr.map((lovedChar) => (
+              <p key={lovedChar}>{lovedChar}</p>
+            ))}
+          </>
+        ) : (
+          <p>Loading ....</p>
+        )}
+      </div>
+    </>
   );
 }
 

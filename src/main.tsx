@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/Swipe",
-        element: <Swipe />,
+        element: <Swipe filter={"tatooine"} />,
       },
     ],
   },
