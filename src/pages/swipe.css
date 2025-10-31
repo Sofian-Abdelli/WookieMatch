@@ -1,0 +1,99 @@
+.swipe-main {
+  background-color: black;
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.swipe-card {
+  grid-area: stack;
+  height: 500px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    height: 500px;
+    filter: drop-shadow(0px 0px 30px #333c47);
+    corner-shape: bevel;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+  }
+
+  article {
+    color: #86aab8;
+    bottom: -30px;
+    position: absolute;
+    text-align: center;
+    background-color: #121518;
+    padding: 20px;
+    width: 70%;
+    border: solid 5px #86aab8;
+    corner-shape: bevel;
+    border-bottom-right-radius: 20px;
+  }
+}
+.loved {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  animation: blink ease-in 0.3s forwards;
+  opacity: 0;
+  filter: blur(1), contrast(0);
+  span {
+    text-align: right;
+    margin: 20px;
+    font-size: 24px;
+    color: white;
+  }
+  p {
+    background-color: #121518;
+    corner-shape: bevel;
+    border-bottom-right-radius: 20px;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 20px;
+    color: #86aab8;
+    border: solid 5px #86aab8;
+    transition: 0.3s linear;
+  }
+}
+.heartSvg {
+  position: absolute;
+  left: 25%;
+  width: 55px;
+  height: fit-content;
+}
+.CrossSvg {
+  right: 25%;
+  position: absolute;
+  width: 55px;
+  height: fit-content;
+}
+
+.clearCross {
+  align-self: center;
+  width: 30px;
+  height: fit-content;
+}
+.learnmore {
+  color: #86aab8;
+  bottom: -100px;
+  position: absolute;
+  text-align: center;
+  background-color: #121518;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: solid 4px #86aab8;
+  corner-shape: bevel;
+  border-radius: 20px;
+  text-decoration: none;
+}

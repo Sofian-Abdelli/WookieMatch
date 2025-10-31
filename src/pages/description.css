@@ -1,0 +1,54 @@
+.des-main {
+  background-color: black;
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.des-card {
+  grid-area: stack;
+  height: 500px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  img {
+    object-fit: cover;
+    height: 500px;
+    filter: drop-shadow(0px 0px 30px #333c47);
+    corner-shape: bevel;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 40px;
+  }
+}
+
+.des-div {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  top: 0;
+  animation: blink ease-in 0.3s forwards;
+  opacity: 0;
+  filter: blur(1), contrast(0);
+  p {
+    margin: 10px;
+    color: #86aab8;
+    text-align: center;
+    background-color: #121518;
+    padding: 10px 20px;
+    border: solid 5px #86aab8;
+    corner-shape: bevel;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.retour {
+  /* align-self: center; */
+  width: 55px;
+  height: fit-content;
+}
