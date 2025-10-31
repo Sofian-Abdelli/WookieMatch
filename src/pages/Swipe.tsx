@@ -52,12 +52,16 @@ function Swipe(props: any) {
               </article>
               <Link
                 className="learnmore"
-                to={`/Description/${characs[index].id}`}
+                to={`/Description/${filter}/${characs[index].id}`}
               >
                 Learn more
               </Link>
             </div>
-
+            <div className="btn-container">
+              <Link to="/">
+                <Buttons icon="arrow" className="retour-home" />
+              </Link>
+            </div>
             <Buttons icon="cross" onClick={noNext} className="heartSvg" />
             <Buttons icon="heart" onClick={yesNext} className="CrossSvg" />
             <div className="loved">

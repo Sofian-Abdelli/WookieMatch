@@ -6,7 +6,7 @@ import Buttons from "../components/Buttons";
 import { Link } from "react-router";
 function Description(props: any) {
   const { filter } = props;
-  const { id } = useParams(0);
+  const { id } = useParams();
   const [arr, setArr] = useState(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Description(props: any) {
             </div>
           </div>
           <div className="des-div">
-            <Link to="/Swipe">
+            <Link to={`/Swipe/${filter}`}>
               <Buttons icon="arrow" className="retour" />
             </Link>
             <p>Name : {arr[id - 1].name}</p>

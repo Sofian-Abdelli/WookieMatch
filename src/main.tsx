@@ -19,12 +19,36 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/Swipe",
+        path: "/Swipe/tatooine",
         element: <Swipe filter={"tatooine"} />,
       },
       {
-        path: "/Description/:id",
+        path: "/Description/tatooine/:id",
         element: <Description filter={"tatooine"} />,
+      },
+      {
+        path: "/Swipe/naboo",
+        element: <Swipe filter={"naboo"} />,
+      },
+      {
+        path: "/Description/naboo/:id",
+        element: <Description filter={"naboo"} />,
+      },
+      {
+        path: "/Swipe/coruscant",
+        element: <Swipe filter={"coruscant"} />,
+      },
+      {
+        path: "/Description/coruscant/:id",
+        element: <Description filter={"coruscant"} />,
+      },
+      {
+        path: "/Swipe/toydaria",
+        element: <Swipe filter={"toydaria"} />,
+      },
+      {
+        path: "/Description/toydaria/:id",
+        element: <Description filter={"toydaria"} />,
       },
     ],
   },

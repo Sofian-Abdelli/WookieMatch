@@ -12,10 +12,3 @@
     opacity: 1;
   }
 }
-
-@font-face {
-  font-family: "StarJedi";
-  src: url("/fonts/Starjedi.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}

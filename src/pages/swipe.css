@@ -97,3 +97,14 @@
   border-radius: 20px;
   text-decoration: none;
 }
+
+.retour-home {
+  width: 55px;
+  height: fit-content;
+}
+
+.btn-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
