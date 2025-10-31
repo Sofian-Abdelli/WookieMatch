@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react";
 import "./swipe.css";
 import Background from "../components/Background";
+import Buttons from "../components/Buttons";
 
-function Swipe(props) {
+function Swipe(props: any) {
   const { filter } = props;
 
   const [characs, setCharacs] = useState<any>(null);
   const [index, setIndex] = useState(0);
   const [smth, setSmth] = useState(0);
-  const [loveArr, setLoveArr] = useState([]);
+  const [loveArr, setLoveArr] = useState(() => {
+    return JSON.parse(localStorage.getItem("loveArr")) || [];
+  });
 
   useEffect(() => {
     fetch("https://miadil.github.io/starwars-api/api/all.json")
       .then((response) => response.json())
       .then((data) =>
-        setCharacs(data.filter((char) => char.homeworld === filter)),
+        setCharacs(data.filter((char: any) => char.homeworld === filter)),
       );
   }, []);
 
@@ -29,9 +32,11 @@ function Swipe(props) {
   };
 
   const yesNext = () => {
-    setLoveArr((prev) => [...prev, characs[index].name]);
+    setLoveArr((prev: any) => [...prev, characs[index].name]);
     setSmth((prev) => prev + 1);
   };
+
+  localStorage.setItem("loveArr", JSON.stringify(loveArr));
 
   return (
     <>
@@ -46,12 +51,22 @@ function Swipe(props) {
               </article>
             </div>
 
-            <button onClick={yesNext}>love</button>
-            <button onClick={noNext}>X</button>
-
-            {loveArr.map((lovedChar) => (
-              <p key={lovedChar}>{lovedChar}</p>
-            ))}
+            <Buttons icon="cross" onClick={noNext} className="heartSvg" />
+            <Buttons icon="heart" onClick={yesNext} className="CrossSvg" />
+            <div className="loved">
+              <span>You liked :</span>
+              {loveArr.map((lovedChar: any) => (
+                <p key={lovedChar}>{lovedChar}</p>
+              ))}
+              <Buttons
+                className="clearCross"
+                icon="cross"
+                onClick={() => {
+                  localStorage.removeItem("loveArr");
+                  setLoveArr((prev) => prev.slice(0, -1));
+                }}
+              />
+            </div>
           </>
         ) : (
           <p>Loading ....</p>
