@@ -7,7 +7,7 @@ import App from "./App";
 
 import Home from "./pages/Home";
 import Swipe from "./pages/Swipe";
-
+import Description from "./pages/Description";
 // router creation
 
 const router = createBrowserRouter([
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/Swipe",
         element: <Swipe filter={"tatooine"} />,
+      },
+      {
+        path: "/Description/:id",
+        element: <Description filter={"tatooine"} />,
       },
     ],
   },

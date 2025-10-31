@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./swipe.css";
 import Background from "../components/Background";
 import Buttons from "../components/Buttons";
+import { Link } from "react-router";
 
 function Swipe(props: any) {
   const { filter } = props;
@@ -49,6 +50,12 @@ function Swipe(props: any) {
               <article>
                 <span>{characs[index].name}</span>
               </article>
+              <Link
+                className="learnmore"
+                to={`/Description/${characs[index].id}`}
+              >
+                Learn more
+              </Link>
             </div>
 
             <Buttons icon="cross" onClick={noNext} className="heartSvg" />
