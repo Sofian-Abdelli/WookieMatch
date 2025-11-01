@@ -11,7 +11,7 @@ const cards = [
     title: "Les Rebelles du Coeur",
     description:
       "Tu veux vivre des histoires épiques, sans forcément viser le mariage impérial. Le fun, le feu et le danger, c'est ton trio préféré.",
-    color: "#9D0000",
+    color: "#9d00007b",
     filter: "tatooine",
   },
   {
@@ -19,7 +19,7 @@ const cards = [
     title: "Les gardiens du calme",
     description:
       "Tu crois au véritable amour, même à travers les étoiles. Les couples Anakin & Padmé, c'est ton mood (sans la tragédie, si possible).",
-    color: "#00529A",
+    color: "#00529a98",
     filter: "naboo",
   },
   {
@@ -27,7 +27,7 @@ const cards = [
     title: "Les Sages de Dagobah",
     description:
       "Tu cherches la paix, la complicité et un lien d'esprit à esprit. L'amour, c'est un équilibre dans la Force.",
-    color: "#009667",
+    color: "#00966686",
     filter: "coruscant",
   },
   {
@@ -35,7 +35,7 @@ const cards = [
     title: "Les Mystiques de Coruscant",
     description:
       "Tu brilles en société, aimes papoter dans les cantinas et n'as pas peur de flirter à la vitesse de la lumière",
-    color: "#6E00A9",
+    color: "#6e00a989",
     filter: "toydaria",
   },
 ];
