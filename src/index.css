@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Orbitron";
+  z-index: 2;
+}
+
+@keyframes blink {
+  to {
+    filter: blur(0) contrast(1);
+    opacity: 1;
+  }
+}
